@@ -33,9 +33,9 @@ git clone https://github.com/vinhlee95/django-pg-docker-tutorial.git
 docker compose up -d --project-name dilpom-app
 ```
 Можно посмотреть, что контейнеры успешно запущены:
-
+![1](https://github.com/mazespd/DevOps-Sprint-2/assets/131882625/5e2393ea-f72a-4272-aa92-9a2c0dcff73d)
 И по URL открывается сайт:
-
+![2](https://github.com/mazespd/DevOps-Sprint-2/assets/131882625/dc3192ed-00e6-44c3-989e-7f37c00a74bc)
 
 Удаляем контейнеры:
 ```
@@ -120,8 +120,9 @@ docker_build:
     - sudo docker push mazespd/sprint2:$TAG
 ```
 Если job выполнился успешно, тогда вывод будет следующий:
-
+![job1](https://github.com/mazespd/DevOps-Sprint-2/assets/131882625/61099edf-1c00-4e64-884f-ecb25c8e3ddd)
 Результат можно посмотреть в Docker Hub:
+![dh1](https://github.com/mazespd/DevOps-Sprint-2/assets/131882625/9190755b-1620-4e59-b4a2-c2ca9ce6aba3)
 
 3) В каталоге kubernetes описываем все нужные манифесты:
 ```
@@ -132,16 +133,17 @@ https://github.com/mazespd/DevOps-Sprint-2/tree/main/kubernetes
 ```
 kubectl apply -f . -n diplom
  ```
- 
  Успешно развёрнутое приложение выглядит так:
- 
- 
+![kub3](https://github.com/mazespd/DevOps-Sprint-2/assets/131882625/185cb3a3-6042-4643-aeb3-dac24905641a)
+![kub4](https://github.com/mazespd/DevOps-Sprint-2/assets/131882625/8327e507-2164-43c0-85f3-c82a49a96c82)
+
  Соответственно приложение доступно по двум адресам на порту 30773
 ```
 http://51.250.104.179:30773
 http://130.193.54.175:30773
 ```
-
+![kub1](https://github.com/mazespd/DevOps-Sprint-2/assets/131882625/0adbc30b-0981-47f1-bb24-0fff5e41f5b9)
+![kub2](https://github.com/mazespd/DevOps-Sprint-2/assets/131882625/0a168449-b020-4c0d-ae64-1c7698a3da76)
 
 4) Описываем приложение в Helm-чарт.
 В каталоге, где находятся манифесты kubernetes используем следующие команды:
@@ -195,7 +197,12 @@ app_deploy:
 ```
 
 Настраиваем запуск по созданию тега.
+![tag1](https://github.com/mazespd/DevOps-Sprint-2/assets/131882625/d53e33ec-1f74-469e-beea-97646c09daa1)
+![tag2](https://github.com/mazespd/DevOps-Sprint-2/assets/131882625/ddebc0df-c31e-4fce-83d5-6fb0725398bc)
+
 Успешно выполненный job выглядит так:
+![job2](https://github.com/mazespd/DevOps-Sprint-2/assets/131882625/1e4b3328-9df5-4754-a5d6-dcb946067c35)
+
 
 
 
